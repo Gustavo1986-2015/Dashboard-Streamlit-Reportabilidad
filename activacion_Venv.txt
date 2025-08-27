@@ -1,0 +1,31 @@
+Activar tu venv (.venv) en PowerShell:
+
+cd "C:\Users\gustavogomez\Downloads\Dashboard Streamlit Reportabilidad"
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force   # si hace falta permitir scripts
+. .\.venv\Scripts\Activate.ps1
+
+Ejecutar la app correctamente:
+
+streamlit run "dashboard_Reportabilidad_mejorado.py"
+# o sin activar el venv:
+& "C:/Users/gustavogomez/Downloads/Dashboard Streamlit Reportabilidad/.venv/Scripts/streamlit.exe" run "C:/Users/gustavogomez/Downloads/Dashboard Streamlit Reportabilidad/dashboard_de_reportabilidad.py"
+
+Comandos recomendados (PowerShell, desde la carpeta del proyecto):
+cd "C:\Users\gustavogomez\Downloads\Dashboard Streamlit Reportabilidad"
+python -m streamlit run "dasboard_Reportabilidad_(Versión Segregada).py"
+
+
+
+Comandos útiles (PowerShell):
+
+# Ejecutar (ya lo hiciste)
+& "C:/Users/gustavogomez/AppData/Local/Programs/Python/Python312/python.exe" -m streamlit run "dashboard_Reportabilidad_mejorado.py"
+
+# Ejecutar con log detallado
+& "C:/Users/gustavogomez/AppData/Local/Programs/Python/Python312/python.exe" -m streamlit run "dashboard_Reportabilidad_mejorado.py" --logger.level=debug
+
+# Ejecutar en otro puerto (ej.: 8502)
+& "C:/Users/gustavogomez/AppData/Local/Programs/Python/Python312/python.exe" -m streamlit run "dashboard_Reportabilidad_mejorado.py" --server.port 8502
+
+# Ejecutar en segundo plano (detached)
+Start-Process -FilePath "C:/Users/gustavogomez/AppData/Local/Programs/Python/Python312/python.exe" -ArgumentList '-m streamlit run "dashboard_Reportabilidad_mejorado.py"' -WindowStyle Hidden
